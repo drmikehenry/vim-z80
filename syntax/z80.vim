@@ -92,6 +92,8 @@ syn keyword	cTodo		contained TODO FIXME XXX
 syn match z80Comment ";.*$" contains=cTodo
 syn match z80Comment "^\*$"
 syn region z80Comment2 start="\<\.endasm\>" skip="\n" end="\<\.asm\>" keepend contains=z80Comment,z80Comment2 
+syn region z80Comment3 start="^#comment\>" skip="\n" end="^#endcomment\>" keepend
+syn region z80Comment start="\/\*" end="\*\/" contains=cTodo
 syn region z80Comment start="\/\*" end="\*\/" contains=cTodo
 
 hi def link cTodo		Todo
